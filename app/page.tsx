@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { NotificationManager } from "./_components/notification-manager";
 import { GithubIcon } from "./_icons/other-icons";
@@ -9,10 +8,13 @@ import BottomNavigation from "@/components/core/bottomNavigation";
 
 export default function Home() {
   return (
-    <main className="flex flex-auto flex-col items-center pt-24">
-      <HeaderNavigation/>
-       <Link href={'/mobile_feature'} >Mobile Feature</Link>
-       <BottomNavigation/>
+    < main>
+      <HeaderNavigation />
+      <div className="flex flex-row min-h-screen justify-center items-center mt-20">
+        <Link href={"/mobile_feature"}>Mobile Feature</Link>
+      </div>
+      
+      <BottomNavigation />
     </main>
   );
 }
