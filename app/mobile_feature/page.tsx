@@ -6,7 +6,7 @@ import { GithubIcon } from "../_icons/other-icons";
 import { NotificationManager } from "../_components/notification-manager";
 export default function Offline() {
   return (
-    <main className="flex flex-auto flex-col items-center pt-24">
+    <main className="flex flex-auto flex-col items-center">
        <Link href={'/'} >back to Home</Link>
       <Link
         className="flex flex-col gap-2 items-center"

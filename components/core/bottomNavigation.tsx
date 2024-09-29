@@ -1,10 +1,10 @@
-
+import Link from "next/link";
 export default function BottomNavigation() {
   return (
-    <div className="fixed bottom-0 md:hidden left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+    <div className="fixed bottom-0 md:hidden left-0 z-10 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
       <div className="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
-        <button
-          type="button"
+        <Link
+          href={"/"}
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <svg
@@ -19,9 +19,9 @@ export default function BottomNavigation() {
           <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
             Home
           </span>
-        </button>
-        <button
-          type="button"
+        </Link>
+        <Link
+          href={"/explore"}
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <svg
@@ -39,11 +39,11 @@ export default function BottomNavigation() {
             ></path>
           </svg>
           <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-          Explore
+            Explore
           </span>
-        </button>
-        <button
-          type="button"
+        </Link>
+        <Link
+          href={"/offers"}
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <svg
@@ -56,11 +56,11 @@ export default function BottomNavigation() {
             <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"></path>
           </svg>
           <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-          Offers
+            Offers
           </span>
-        </button>
-        <button
-          type="button"
+        </Link>
+        <Link
+          href={"/services"}
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <svg
@@ -77,11 +77,11 @@ export default function BottomNavigation() {
             ></path>
           </svg>
           <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-          Services
+            Services
           </span>
-        </button>
-        <button
-          type="button"
+        </Link>
+        <Link
+          href={"/account"}
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <svg
@@ -98,9 +98,9 @@ export default function BottomNavigation() {
             ></path>
           </svg>
           <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-          Account
+            Account
           </span>
-        </button>
+        </Link>
       </div>
     </div>
   );

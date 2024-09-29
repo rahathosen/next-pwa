@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import SplashScreens from "@/lib/splash-screens";
+import HeaderNavigation from "@/components/core/headerNavigation";
+import BottomNavigation from "@/components/core/bottomNavigation";
 
 export const metadata: Metadata = {
   metadataBase: siteConfig.url,
@@ -41,7 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen overscroll-none mx-auto bg-gradient-to-b from-zinc-800 to-zinc-900 text-zinc-300">
-        {children}
+        <HeaderNavigation />
+        <div className="my-24">{children}</div>
+        <BottomNavigation />
       </body>
     </html>
   );
