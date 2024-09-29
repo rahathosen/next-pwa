@@ -1,12 +1,12 @@
 import { Metadata, MetadataRoute } from "next";
 
 export const siteConfig: SiteConfig = {
-  name: "Next PWA",
-  shortName: "PWA",
+  name: "WAYS GOLD",
+  shortName: "WAYS GOLD",
   themeColor: "#18181b", // status or title bar color
   backgroundColor: "#18181b", // background color before stylesheets have loaded
   textColor: "#d4d4d8", // text color for opengraph images and splash screens
-  description: "Next PWA",
+  description: ` "WAYS GOLD" by AL-HASAN GOLD`,
   authors: [{ name: "Rahathosen", url: "https://github.com/rahathosen" }],
   creator: "rahathosen",
   url: new URL(
