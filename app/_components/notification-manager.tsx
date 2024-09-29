@@ -38,10 +38,17 @@ export const NotificationManager = ({
       <div className="flex flex-col gap-4 bg-zinc-800 p-2 rounded-md text-sm w-full font-semibold">
         <div className="flex justify-between">
           <span className="text-lg text-zinc-100">PWA</span>
-          <InstallationPrompt
+
+          {isStandalone ?
+           <span>Installed</span> 
+           : 
+           <InstallationPrompt
             manifest-url="/manifest.webmanifest"
-            description={`Install ${siteConfig.name} to your device.`}
-          />
+            description={`Install ${siteConfig.name} to your device.`}/>
+           }
+
+
+          
         </div>
 
         <div className="flex justify-between">

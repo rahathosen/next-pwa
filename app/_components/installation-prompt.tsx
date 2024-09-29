@@ -32,7 +32,7 @@ const InstallationPrompt = (props: PWAInstallAttributes) => {
         onClick={() => pwaInstallRef.current?.showDialog(true)}
       >
         <InstructionsIcon />
-        Instructions
+        Install Now
       </button>
     </>
   );
