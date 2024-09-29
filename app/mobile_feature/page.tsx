@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
@@ -9,7 +10,7 @@ export default function Offline() {
        <Link href={'/'} >back to Home</Link>
       <Link
         className="flex flex-col gap-2 items-center"
-        href="https://github.com/rahathosen/nextjs-pwa-webpush-template"
+        href="https://github.com/rahathosen/next-pwa"
       >
         <Image
           src="/icon/icon_xl"
