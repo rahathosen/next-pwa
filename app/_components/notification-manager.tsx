@@ -45,10 +45,7 @@ export const NotificationManager = ({
            <InstallationPrompt
             manifest-url="/manifest.webmanifest"
             description={`Install ${siteConfig.name} to your device.`}/>
-           }
-
-
-          
+           }          
         </div>
 
         <div className="flex justify-between">

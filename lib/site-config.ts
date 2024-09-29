@@ -1,18 +1,18 @@
 import { Metadata, MetadataRoute } from "next";
 
 export const siteConfig: SiteConfig = {
-  name: "Next.js PWA WebPush Template",
+  name: "Next PWA",
   shortName: "PWA",
   themeColor: "#18181b", // status or title bar color
   backgroundColor: "#18181b", // background color before stylesheets have loaded
   textColor: "#d4d4d8", // text color for opengraph images and splash screens
-  description: "NextJS PWA and WebPush Notifications",
+  description: "Next PWA",
   authors: [{ name: "Rahathosen", url: "https://github.com/rahathosen" }],
   creator: "rahathosen",
   url: new URL(
     process.env.NODE_ENV === "development"
       ? "https://localhost:3000"
-      : "https://nextjs-pwa-webpush-rahathosen.vercel.app"
+      : "https://thenext-pwa.vercel.app"
   ),
   keywords: [
     "nextjs",
