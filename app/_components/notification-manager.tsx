@@ -40,7 +40,7 @@ export const NotificationManager = ({
           <span className="text-lg text-zinc-100">PWA</span>
 
           {isStandalone ?
-           <span>Installed</span> 
+           <span className="text-xs items-center bg-[#f79e5d] text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5">Installed</span> 
            : 
            <InstallationPrompt
             manifest-url="/manifest.webmanifest"
