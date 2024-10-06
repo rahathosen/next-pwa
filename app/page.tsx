@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    < main>
-      <div className="flex flex-row min-h-screen justify-center items-center">
+    <main>
+      <div className="min-h-screen justify-center items-center">
         <Link href={"/mobile_feature"}>
-        <Button>Check Mobile Feature</Button>
+          <Button>Check Mobile Feature</Button>
         </Link>
       </div>
     </main>

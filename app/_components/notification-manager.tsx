@@ -35,17 +35,20 @@ export const NotificationManager = ({
 
   return (
     <div className="flex flex-col gap-4 items-center w-full p-4">
-      <div className="flex flex-col gap-4 bg-zinc-800 p-2 rounded-md text-sm w-full font-semibold">
+      <div className="flex flex-col gap-4 bg-zinc-400 p-2 rounded-md text-sm w-full font-semibold">
         <div className="flex justify-between">
           <span className="text-lg text-zinc-100">PWA</span>
 
-          {isStandalone ?
-           <span className="text-xs items-center bg-[#f79e5d] text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5">Installed</span> 
-           : 
-           <InstallationPrompt
-            manifest-url="/manifest.webmanifest"
-            description={`Install ${siteConfig.name} to your device.`}/>
-           }          
+          {isStandalone ? (
+            <span className="text-xs items-center bg-[#f79e5d] text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5">
+              Installed
+            </span>
+          ) : (
+            <InstallationPrompt
+              manifest-url="/manifest.webmanifest"
+              description={`Install ${siteConfig.name} to your device.`}
+            />
+          )}
         </div>
 
         <div className="flex justify-between">
@@ -63,7 +66,7 @@ export const NotificationManager = ({
         )}
       </div>
 
-      <div className="flex flex-col gap-4 bg-zinc-800 p-2 rounded-md text-sm w-full font-semibold">
+      <div className="flex flex-col gap-4 bg-zinc-400 p-2 rounded-md text-sm w-full font-semibold">
         <div className="flex justify-between">
           <span className="text-lg text-zinc-100">Notifications</span>
           <div className="flex gap-2 items-center">

@@ -42,10 +42,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen overscroll-none mx-auto bg-gradient-to-b from-zinc-800 to-zinc-900 text-zinc-300">
-        <HeaderNavigation />
-        <div className="my-24">{children}</div>
-        <BottomNavigation />
+      <body className="overscroll-none mx-auto">
+        <div className="hidden md:block mb-24">
+          <HeaderNavigation />
+        </div>
+        <div className="my-4">{children}</div>
+        <div className="md:mt:0 mt-24">
+          <BottomNavigation />
+        </div>
       </body>
     </html>
   );
