@@ -1,4 +1,3 @@
-import Registration from "@/components/core/registration";
 import Login from "@/components/core/login";
 
 import Image from "next/image";
@@ -8,8 +7,6 @@ import Profile from "@/components/core/profile";
 export default function Offline() {
   return (
     <>
-      {/* <Login /> */}
-      {/* <Registration /> */}
       <Profile/>
     </>
   );
