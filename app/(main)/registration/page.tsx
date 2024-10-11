@@ -25,12 +25,14 @@ export default function Registration() {
               className="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
               placeholder="Password"
             />
-            <button
+           <Link href={'/login'}>
+           <button
               type="submit"
               className="mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent  bg-amber-400 text-amber-100 hover:text-white focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center font-medium focus:outline-none"
             >
               Registration
             </button>
+           </Link>
             <div className="flex flex-col items-center mt-5">
               <p className="mt-1 text-xs font-light text-gray-500">
                 Already have an account?

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
+// import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import SplashScreens from "@/lib/splash-screens";
 import HeaderNavigation from "@/components/core/headerNavigation";
@@ -41,10 +41,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="overscroll-none mx-auto">
+      <div className="overscroll-none mx-auto">
+        <header className="hidden md:block mb-24">
+          <HeaderNavigation />
+        </header>
         <div className="my-4">{children}</div>
-      </body>
-    </html>
+        <footer className="md:mt:0 mt-24">
+          <BottomNavigation />
+        </footer>
+      </div>
   );
 }

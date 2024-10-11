@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import { GithubIcon } from "../_icons/other-icons";
-import { NotificationManager } from "../_components/notification-manager";
+import { GithubIcon } from "../../_icons/other-icons";
+import { NotificationManager } from "../../_components/notification-manager";
 export default function Offline() {
   return (
     <main className="flex flex-auto flex-col items-center">
