@@ -14,25 +14,34 @@ import {
   XMarkIcon as XMarkIconMini,
 } from "@heroicons/react/20/solid";
 import {
-  BellIcon,
-  CreditCardIcon,
   CubeIcon,
+  UserGroupIcon,
   FingerPrintIcon,
-  UserCircleIcon,
-  UsersIcon,
-  XMarkIcon,
+  BellIcon,
   IdentificationIcon,
-  ShieldCheckIcon
+  GlobeAltIcon,
+  DocumentTextIcon,
+  QuestionMarkCircleIcon,
+  ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/outline";
+
+
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { MobileIcon } from "@radix-ui/react-icons";
+
 const secondaryNavigation = [
-  { name: "General", href: "#", icon: CubeIcon, current: true },
+  { name: "Account detail", href: "#", icon: CubeIcon, current: true },
+  { name: "Loan Management", href: "#loan-management", icon: UserGroupIcon, current: false },
+  { name: "Rental Management", href: "#rental-management", icon: UserGroupIcon, current: false },
+  { name: "Payment Scheduling", href: "#payment-scheduling", icon: CalendarDaysIcon, current: false },
   { name: "Change PIN", href: "#", icon: FingerPrintIcon, current: false },
-  { name: "Change Mobile Operator", href: "#", icon: MobileIcon, current: false },
-  { name: "Resubmit KYC", href: "#", icon: CreditCardIcon, current: false },
-  { name: "Authorized Marchant", href: "#", icon: IdentificationIcon, current: false },
-  { name: "Privacy Policy ", href: "#", icon: ShieldCheckIcon, current: false },
+  { name: "Notification", href: "#", icon: BellIcon, current: false },
+  { name: "Resubmit KYC", href: "#", icon: IdentificationIcon, current: false },
+  { name: "Authorized Merchant", href: "#", icon: IdentificationIcon, current: false },
+  { name: "Language", href: "#", icon: GlobeAltIcon, current: false },
+  { name: "Terms and condition", href: "#", icon: DocumentTextIcon, current: false },
+  { name: "Help", href: "#", icon: QuestionMarkCircleIcon, current: false },
+  { name: "Logout", href: "#", icon: ArrowLeftOnRectangleIcon, current: false },
 ];
 
 function classNames(...classes: any) {
@@ -42,72 +51,51 @@ function classNames(...classes: any) {
 export default function Profile() {
   return (
     <>
-      <div className="container mx-auto px-4 bg-white">
-        <div className="w-full md:w-1/2 lg:w-1/3 mx-auto ">
-          <div className="lg:col-start-3 lg:row-end-1">
-            <h2 className="sr-only">Summary</h2>
-            <div className="rounded-lg bg-gray-50 shadow-sm ring-1 ring-gray-900/5 pb-4">
-              <div className="border-b border-gray-200 px-4 py-5 sm:px-6">
-                <div className="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                  <div className="ml-4 mt-4">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <img
-                          alt=""
-                          src="user.png"
-                          className="h-12 w-12 rounded-full"
-                        />
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-base font-semibold leading-6 text-gray-900">
-                          Rahat Hosen
-                        </h3>
-                        <p className="text-sm text-gray-500">
-                          <a href="#">01723728496</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="ml-4 mt-4 flex flex-shrink-0">
-                    <button
-                      type="button"
-                      className="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                    >
-                      <PhoneIcon
-                        aria-hidden="true"
-                        className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
-                      />
-                      <span>Phone</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                    >
-                      <EnvelopeIcon
-                        aria-hidden="true"
-                        className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400"
-                      />
-                      <span>Message</span>
-                    </button>
-                  </div>
-                  <dl className="flex flex-wrap">
-                    <div className="flex-auto pl-6 pt-6">
-                      {/* <dt className="text-sm font-semibold leading-6 text-gray-900">
-                    Balance
-                  </dt> */}
-                      <dd className="mt-1 text-base font-semibold leading-6 text-gray-900">
-                        ৳10,560.00
-                      </dd>
-                    </div>
-                    <div className="flex-none self-end px-6 pt-4">
-                      <dt className="sr-only">Status</dt>
-                      <dd className="rounded-md bg-amber-50 px-2 py-1 text-xs font-medium text-amber-600 ring-1 ring-inset ring-amber-600/20">
-                        GOLD
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
+            <dl className="flex flex-wrap">
+              {/* Name and Phone */}
+              <div className="flex-auto pl-6 pt-6">
+                <dt className="text-sm font-semibold leading-6 text-gray-900">Name</dt>
+                <dd className="mt-1 text-base font-semibold leading-6 text-gray-900">
+                  Name Surname
+                </dd>
+                
+                <dt className="text-sm font-semibold leading-6 text-gray-900">Phone</dt>
+                <dd className="mt-1 text-base font-semibold leading-6 text-gray-900">
+                  +88 (1234567890)
+                </dd>
               </div>
+
+              {/* Total Assets Value */}
+              <div className="flex-auto pl-6 pt-4">
+                <dt className="text-sm font-semibold leading-6 text-gray-900">Total Assets Value</dt>
+                <dd className="mt-1 text-base font-semibold leading-6 text-gray-900">
+                  ৳10,560.00
+                </dd>
+              </div>
+
+              {/* Gold List with Quantity and Value Price */}
+              <div className="flex-auto pl-6 pt-4">
+                <dt className="text-sm font-semibold leading-6 text-gray-900">Gold List</dt>
+                <dd className="mt-1 text-base font-semibold leading-6 text-gray-900">
+                  <ul className="list-disc pl-5">
+                    <li>
+                      10 grams - ৳50,000.00
+                    </li>
+                    <li>
+                      5 grams - ৳25,000.00
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+
+              {/* Status */}
+              <div className="flex-none self-end px-6 pt-4">
+                <dt className="sr-only">Status</dt>
+                <dd className="rounded-md bg-amber-50 px-2 py-1 text-xs font-medium text-amber-600 ring-1 ring-inset ring-amber-600/20">
+                  GOLD
+                </dd>
+              </div>
+            </dl>
 
               <aside className="flex overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-64 lg:flex-none lg:border-0 lg:py-20">
                 <nav className="flex-none px-4 sm:px-6 lg:px-0">
@@ -142,10 +130,8 @@ export default function Profile() {
                   </ul>
                 </nav>
               </aside>
-            </div>
-          </div>
-        </div>
-      </div>
+         
+    
     </>
   );
 }
