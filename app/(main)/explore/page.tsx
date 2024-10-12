@@ -7,7 +7,7 @@ import { ArcElement, LineElement, PointElement, Chart, CategoryScale, LinearScal
 // Register the ArcElement, LineElement, PointElement, and other components
 Chart.register(ArcElement, LineElement, PointElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-export default function Dashboard() {
+export default function Explore() {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {

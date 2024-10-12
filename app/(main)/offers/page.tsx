@@ -36,7 +36,7 @@ interface PaymentDetails {
   reminder: boolean;
 }
 
-export default function ManagementDashboard() {
+export default function Offers() {
   // Asset Management state
   const [assets, setAssets] = useState<Asset[]>([
     {

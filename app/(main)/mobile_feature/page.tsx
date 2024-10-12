@@ -3,7 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { GithubIcon } from "../../_icons/other-icons";
 import { NotificationManager } from "../../_components/notification-manager";
-export default function Offline() {
+export default function MobileFeature() {
   return (
     <main className="flex flex-auto flex-col items-center">
        <Link href={'/'} >back to Home</Link>

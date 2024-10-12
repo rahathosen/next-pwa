@@ -2,28 +2,50 @@
 
 import React, { useState } from 'react';
 
-export default function Dashboard() {
-  const [loanStatus, setLoanStatus] = useState([]);
-  const [rentedAssets, setRentedAssets] = useState([]);
-  const [paymentHistory, setPaymentHistory] = useState([]);
-  const [selectedLoan, setSelectedLoan] = useState(null);
-  const [selectedRental, setSelectedRental] = useState(null);
-  const [paymentType, setPaymentType] = useState('Loan');
-  const [paymentDate, setPaymentDate] = useState('');
-  const [recurring, setRecurring] = useState(false);
-  const [reminder, setReminder] = useState(false);
+interface Loan {
+  amount: number;
+  status: string;
+  collateral: string;
+  interestRate: number;
+  repaymentSchedule: string;
+}
 
-  const handleLoanDetails = (loan) => {
+interface Rental {
+  name: string;
+  income: number;
+  rentalPrice: number;
+  duration: number;
+  terms: string;
+}
+
+interface Payment {
+  type: string;
+  date: string;
+  recurring: boolean;
+  reminder: boolean;
+}
+
+const Services: React.FC = () => {
+  const [loanStatus, setLoanStatus] = useState<Loan[]>([]);
+  const [rentedAssets, setRentedAssets] = useState<Rental[]>([]);
+  const [paymentHistory, setPaymentHistory] = useState<Payment[]>([]);
+  const [selectedLoan, setSelectedLoan] = useState<Loan | null>(null);
+  const [selectedRental, setSelectedRental] = useState<Rental | null>(null);
+  const [paymentType, setPaymentType] = useState<string>('Loan');
+  const [paymentDate, setPaymentDate] = useState<string>('');
+  const [recurring, setRecurring] = useState<boolean>(false);
+  const [reminder, setReminder] = useState<boolean>(false);
+
+  const handleLoanDetails = (loan: Loan) => {
     setSelectedLoan(loan);
   };
 
-  const handleRentalAgreement = (rental) => {
+  const handleRentalAgreement = (rental: Rental) => {
     setSelectedRental(rental);
   };
 
   const handleSchedulePayment = () => {
-    // Logic to schedule payment
-    const newPayment = {
+    const newPayment: Payment = {
       type: paymentType,
       date: paymentDate,
       recurring,
@@ -182,4 +204,6 @@ export default function Dashboard() {
       </section>
     </div>
   );
-}
+};
+
+export default Services;
