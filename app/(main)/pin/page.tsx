@@ -29,7 +29,7 @@ const FormSchema = z.object({
   }),
 })
 
-export default function pinForm() {
+export default function PinForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {

@@ -78,7 +78,7 @@ export default function OtpForm() {
 
             <Link href={'/uploadfile'} className={buttonVariants({ variant: "default" })}>Verify</Link>
 
-            <Label className="text-center" htmlFor="terms">I didn't receive the code? <span>send again</span></Label>
+            <Label className="text-center" htmlFor="terms">I didn&apos;t receive the code? <span>send again</span></Label>
           </form>
         </Form>
       </div>
