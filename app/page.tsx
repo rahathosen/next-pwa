@@ -5,9 +5,12 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
 import Login from "./(main)/login/page";
+import StartPage from "./(page)/start/page";
 
 export default function Home() {
   return (
-   <Login/>
+   <>
+      <StartPage/>
+   </>
   );
 }
