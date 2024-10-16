@@ -82,7 +82,7 @@ export default function UploadFile() {
             </div>
 
             <Link
-              href={"/dashboard"}
+              href={"/pin"}
               className={buttonVariants({ variant: "default" })}
             >
               Continue
