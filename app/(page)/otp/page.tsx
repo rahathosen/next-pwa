@@ -36,9 +36,7 @@ export default function OtpForm() {
       pin: "",
     },
   })
-
   
-
   return (
    <>
    
