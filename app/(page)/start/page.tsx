@@ -13,7 +13,7 @@ const StartPage = () => {
           GOLD WAYS<sup>®</sup>
         </h1>
         <p className="text-sm text-gray-400">
-          Powered by 'AL-HASQAN GOLD BANK'
+          Powered by &apos;AL-HASQAN GOLD BANK&apos;
         </p>
       </div>
       <br />
