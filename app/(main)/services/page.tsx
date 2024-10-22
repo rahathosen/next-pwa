@@ -3,17 +3,18 @@
 import React, { useState } from 'react';
 
 interface Loan {
-  amount: string; // Assuming you want amount to be a string for user input
+  amount: number;
   status: string;
   collateral: string;
-  documentation: File | null;
+  interestRate: number;
+  repaymentSchedule: string;
 }
 
 interface Rental {
   name: string;
   income: number;
-  rentalPrice: string; // Assuming you want this to be a string for user input
-  duration: string; // Assuming you want this to be a string for user input
+  rentalPrice: number;
+  duration: number;
   terms: string;
 }
 
@@ -24,115 +25,35 @@ interface Payment {
   reminder: boolean;
 }
 
-interface Asset {
-  id: number;
-  name: string;
-  value: string;
-  history: any[];
-  transactions: any[];
-}
-
-interface NewAsset {
-  name: string;
-  value: string;
-  document: File | null;
-}
-
 const Services: React.FC = () => {
   const [loanStatus, setLoanStatus] = useState<Loan[]>([]);
   const [rentedAssets, setRentedAssets] = useState<Rental[]>([]);
   const [paymentHistory, setPaymentHistory] = useState<Payment[]>([]);
   const [selectedLoan, setSelectedLoan] = useState<Loan | null>(null);
   const [selectedRental, setSelectedRental] = useState<Rental | null>(null);
-
-  const [assets, setAssets] = useState<Asset[]>([
-    {
-      id: 1,
-      name: "Gold Necklace",
-      value: "৳ 50,000",
-      history: [],
-      transactions: [],
-    },
-    {
-      id: 2,
-      name: "Silver Ring",
-      value: "৳ 15,000",
-      history: [],
-      transactions: [],
-    },
-  ]);
-
-  const [newAsset, setNewAsset] = useState<NewAsset>({
-    name: "",
-    value: "",
-    document: null,
-  });
-  const [isAddingAsset, setIsAddingAsset] = useState<boolean>(false);
-  const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null);
-
-  // Loan Management state
-  const [loanAmount, setLoanAmount] = useState<string>("");
-  const [loanCollateral, setLoanCollateral] = useState<string>("");
-  const [loanDocumentation, setLoanDocumentation] = useState<File | null>(null);
-  const [isViewingLoan, setIsViewingLoan] = useState<boolean>(false);
-
-  // Rental Management state
-  const [rentalAsset, setRentalAsset] = useState<Rental>({
-    name: "",
-    rentalPrice: "",
-    duration: "",
-    income: 0, // Add income if needed
-    terms: "", // Add terms if needed
-  });
-  const [isViewingRentalAgreement, setIsViewingRentalAgreement] = useState<boolean>(false);
-
-  // Payment Scheduling state
-  const [paymentType, setPaymentType] = useState<string>("Loan");
-  const [paymentDate, setPaymentDate] = useState<string>("");
+  const [paymentType, setPaymentType] = useState<string>('Loan');
+  const [paymentDate, setPaymentDate] = useState<string>('');
   const [recurring, setRecurring] = useState<boolean>(false);
   const [reminder, setReminder] = useState<boolean>(false);
 
-  const handleAddAsset = () => {
-    setAssets([
-      ...assets,
-      { id: assets.length + 1, ...newAsset, history: [], transactions: [] },
-    ]);
-    setNewAsset({ name: "", value: "", document: null });
-    setIsAddingAsset(false);
+  const handleLoanDetails = (loan: Loan) => {
+    setSelectedLoan(loan);
   };
 
-  const handleLoanApplication = () => {
-    if (loanAmount && loanCollateral) {
-      const newLoan: Loan = {
-        amount: loanAmount,
-        collateral: loanCollateral,
-        documentation: loanDocumentation,
-        status: "Pending",
-      };
-      setLoanStatus([...loanStatus, newLoan]);
-      setLoanAmount("");
-      setLoanCollateral("");
-      setLoanDocumentation(null);
-    }
-  };
-
-  const handleRentalAgreement = () => {
-    const newRental = { ...rentalAsset };
-    setRentedAssets([...rentedAssets, newRental]);
-    setRentalAsset({ name: "", rentalPrice: "", duration: "" });
+  const handleRentalAgreement = (rental: Rental) => {
+    setSelectedRental(rental);
   };
 
   const handleSchedulePayment = () => {
-    const paymentDetails: Payment = {
+    const newPayment: Payment = {
       type: paymentType,
       date: paymentDate,
       recurring,
       reminder,
     };
-    setPaymentHistory([...paymentHistory, paymentDetails]);
-    // Reset fields
-    setPaymentType("Loan");
-    setPaymentDate("");
+    setPaymentHistory([...paymentHistory, newPayment]);
+    // Reset form fields after scheduling
+    setPaymentDate('');
     setRecurring(false);
     setReminder(false);
   };
@@ -151,7 +72,7 @@ const Services: React.FC = () => {
               <li key={index} className="border-b py-2 flex justify-between items-center">
                 <span className="text-gray-900 dark:text-white">{loan.amount} - Status: {loan.status}</span>
                 <button
-                  onClick={() => setSelectedLoan(loan)}
+                  onClick={() => handleLoanDetails(loan)}
                   className="text-blue-500 hover:underline"
                 >
                   View Details
@@ -168,7 +89,8 @@ const Services: React.FC = () => {
             <p className="text-gray-900 dark:text-white">Loan Amount: {selectedLoan.amount}</p>
             <p className="text-gray-900 dark:text-white">Collateral: {selectedLoan.collateral}</p>
             <p className="text-gray-900 dark:text-white">Status: {selectedLoan.status}</p>
-            {/* Ensure interestRate and repaymentSchedule are included in Loan interface if needed */}
+            <p className="text-gray-900 dark:text-white">Interest Rate: {selectedLoan.interestRate}</p>
+            <p className="text-gray-900 dark:text-white">Repayment Schedule: {selectedLoan.repaymentSchedule}</p>
             <button
               onClick={() => setSelectedLoan(null)}
               className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-500"
