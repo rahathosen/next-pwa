@@ -16,7 +16,7 @@ const data = [
 export default function ShadcnChart() {
   return (
    <div className="p-4">
-     <Card  className='bg-zinc-100'>
+     <Card  className='shadow-md'>
       <CardHeader>
         <CardTitle>Last Year Gold Pricing</CardTitle>
         <CardDescription>Comparison of the previus gold rate</CardDescription>
@@ -26,7 +26,7 @@ export default function ShadcnChart() {
           config={{
             series1: {
               label: "Gold",
-              color: "hsl(214, 100%, 50%)",
+              color: "hsl(38, 92%, 50%)",
             },
             // series2: {
             //   label: "Series 2",
@@ -59,8 +59,8 @@ export default function ShadcnChart() {
               <Legend />
               <defs>
                 <linearGradient id="colorSeries1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="hsl(214, 100%, 90%)" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="hsl(214, 100%, 90%)" stopOpacity={0.1}/>
+                  <stop offset="5%" stopColor="hsl(38, 92%, 50%)" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="hsl(38, 92%, 50%)" stopOpacity={0.1}/>
                 </linearGradient>
                 {/* <linearGradient id="colorSeries2" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="hsl(150, 100%, 90%)" stopOpacity={0.8}/>
@@ -70,7 +70,7 @@ export default function ShadcnChart() {
               <Area
                 type="monotone"
                 dataKey="series1"
-                stroke="hsl(214, 100%, 50%)"
+                stroke="hsl(38, 92%, 50%)"
                 strokeWidth={2}
                 fillOpacity={1}
                 fill="url(#colorSeries1)"
