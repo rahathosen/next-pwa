@@ -2,57 +2,8 @@
 
 import { AreaChart } from "@/components/AreaChart";
 import ShadcnChart from "@/components/core/shadcnchart";
+import Link from "next/link";
 
-const chartdata = [
-  {
-    date: "Jan 23",
-    SolarPanels: 2890,
-  },
-  {
-    date: "Feb 23",
-    SolarPanels: 2756,
-  },
-  {
-    date: "Mar 23",
-    SolarPanels: 3322,
-  },
-  {
-    date: "Apr 23",
-    SolarPanels: 3470,
-  },
-  {
-    date: "May 23",
-    SolarPanels: 3475,
-  },
-  {
-    date: "Jun 23",
-    SolarPanels: 3129,
-  },
-  {
-    date: "Jul 23",
-    SolarPanels: 3490,
-  },
-  {
-    date: "Aug 23",
-    SolarPanels: 2903,
-  },
-  {
-    date: "Sep 23",
-    SolarPanels: 2643,
-  },
-  {
-    date: "Oct 23",
-    SolarPanels: 2837,
-  },
-  {
-    date: "Nov 23",
-    SolarPanels: 2954,
-  },
-  {
-    date: "Dec 23",
-    SolarPanels: 3239,
-  },
-];
 
 const Dashboard = () => {
   return (
@@ -104,7 +55,7 @@ const Dashboard = () => {
       </div>
   
       <ShadcnChart />
-      {/*  */}
+    
         {/* Stock Info */}
         <section className="p-4">
         <div className="flex justify-between items-center mb-4">
@@ -115,12 +66,12 @@ const Dashboard = () => {
         {/* Stock Cards */}
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 bg-white rounded-lg shadow-md">
-            <p className="text-yellow-500 text-lg">22k 10gm Gold</p>
+            <p className="text-yellow-500 text-md font-bold">22k 10gm Gold</p>
             <p className="text-lg font-bold">৳7000</p>
             <p className="text-green-500">(-0.72%)</p>
           </div>
           <div className="p-4 bg-white rounded-lg shadow-md">
-            <p className="text-yellow-500 text-lg">Traditional 10gm Gold</p>
+            <p className="text-yellow-500 text-md font-bold">Traditional 10gm Gold</p>
             <p className="text-lg font-bold">৳5000</p>
             <p className="text-green-500">(-0.72%)</p>
           </div>
@@ -130,11 +81,11 @@ const Dashboard = () => {
         <div className="mt-4">
           <h2 className="text-lg font-medium text-zinc-950">Today Market Price (in GRAM)</h2>
 
-          <div className="p-4 bg-white shadow-md rounded-lg flex justify-between items-center">
+          {/* <div className="p-4 bg-white shadow-md rounded-lg flex justify-between items-center">
             <p className="text-lg">Product</p>
             <p className="text-lg">Price</p>
             <p className="text-lg">Value</p>
-          </div>
+          </div> */}
           <br />
           <p className="text-sm">CADMIUM (HALLMARKED)</p>
           <hr />
@@ -154,7 +105,7 @@ const Dashboard = () => {
               <p className="text-yellow-500 text-sm">{item.product}</p>
               <p className="text-sm">{item.price}</p>
               <p className="text-green-500 text-sm">{item.value}</p>
-              <button className="text-blue-400">Buy | Sell | Gift</button>
+              <button className="text-blue-400"><Link href={"/dashboard/buy"}>Buy</Link> | Sell | Gift</button>
             </div>
           ))}
           <br />
