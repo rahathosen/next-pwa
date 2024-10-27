@@ -4,7 +4,7 @@ import { AreaChart } from "@/components/AreaChart";
 import ShadcnChart from "@/components/core/shadcnchart";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-
+import { Input } from "@/components/ui/input"
 import {
   ArrowLeftCircleIcon,
   BackspaceIcon,
@@ -14,6 +14,8 @@ import {
   ClockIcon,
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 
 const Buy = () => {
   return (
@@ -43,7 +45,7 @@ const Buy = () => {
           </button>
         </div>
 
-        {/* Buy card */}
+        {/* header card */}
         <div className="p-4 bg-white rounded-lg shadow-md">
           <div className="flex flex-row justify-between pb-4">
             <div className="flex flex-wrap items-center gap-2">
@@ -56,16 +58,16 @@ const Buy = () => {
             <div>
               {" "}
               <div className=" flex w-full flex-none gap-x-2 items-center">
-                <dt className="flex-none">
+                <div className="flex-none">
                   <span className="sr-only">Due date</span>
                   <ClockIcon
                     aria-hidden="true"
                     className="h-6 w-5 text-gray-400"
                   />
-                </dt>
-                <dd className="text-sm leading-6 text-gray-500">
-                  <time dateTime="2023-01-31">price update 6 min ago</time>
-                </dd>
+                </div>
+                <span className="text-sm leading-6 text-gray-500">
+                  <p>price update 6 min ago</p>
+                </span>
               </div>
             </div>
           </div>
@@ -97,12 +99,64 @@ const Buy = () => {
           <Separator className="my-4" />
           <div className="right-0">
             <p className="text-sm text-muted-foreground ">
-              Your Current Gold Balance is: <span className="font-bold text-base">11.730g</span>
+              Your Current Gold Balance is:{" "}
+              <span className="font-bold text-base">11.730g</span>
             </p>
           </div>
         </div>
 
-       
+        <div className="p-4 mt-4 bg-white rounded-lg shadow-md">
+          <div>
+          <p className="font-medium mb-1 text-gray-500">Buy 2434k, 999 pursuit Digital GOLD</p>
+          <div className="flex gap-x-4">
+            <div className="relative flex w-56 items-center justify-center rounded-xl bg-gray-50 px-4 py-3 font-medium text-gray-700">
+              <input
+                className="peer hidden"
+                type="radio"
+                name="radio"
+                id="radio1"
+                checked
+                readOnly
+              />
+              <label
+                className="peer-checked:border-yellow-400 peer-checked:bg-yellow-200 absolute top-0 h-full w-full cursor-pointer rounded-xl border"
+                htmlFor="radio1"
+              >
+                {" "}
+              </label>
+              <div className="peer-checked:border-transparent peer-checked:bg-yellow-400 peer-checked:ring-2 absolute left-4 h-5 w-5 rounded-full border-2 border-gray-300 bg-gray-200 ring-yellow-400 ring-offset-2"></div>
+              <span className="pointer-events-none z-10">BDT</span>
+            </div>
+            <div className="relative flex w-56 items-center justify-center rounded-xl bg-gray-50 px-4 py-3 font-medium text-gray-700">
+              <input
+                className="peer hidden"
+                type="radio"
+                name="radio"
+                id="radio3"
+                checked
+                readOnly
+              />
+              <label
+                className="peer-checked:border-yellow-400 peer-checked:bg-yellow-200 absolute top-0 h-full w-full cursor-pointer rounded-xl border"
+                htmlFor="radio3"
+              >
+                {" "}
+              </label>
+              <div className="peer-checked:border-transparent peer-checked:bg-yellow-400 peer-checked:ring-2 absolute left-4 h-5 w-5 rounded-full border-2 border-gray-300 bg-gray-200 ring-yellow-400 ring-offset-2"></div>
+              <span className="pointer-events-none z-10">In Grams</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center justify-between py-2">
+          <div>
+          <Input type="text" placeholder="Price" />
+          </div> <div>
+          <Label>= 0.11123g</Label>
+          </div>
+          </div>
+          <Button className="w-full mt-4">Buy</Button>
+          </div>
+          
+        </div>
       </section>
     </>
   );
