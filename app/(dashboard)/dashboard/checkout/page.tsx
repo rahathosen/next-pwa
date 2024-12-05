@@ -46,12 +46,7 @@ const Checkout = () => {
           </button>
         </Link>
 
-        {/* <button
-          type="button"
-          className="inline-flex items-center gap-x-1.5 rounded-md bg-sand-deep px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-sand-lite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-deep"
-        >
-          <BellAlertIcon aria-hidden="true" className="-ml-0.5 h-5 w-5" />
-        </button> */}
+       
       </div>
 
       <div className="space-y-6 rounded-lg bg-white p-6 shadow-lg">

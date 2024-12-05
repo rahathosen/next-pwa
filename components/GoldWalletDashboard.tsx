@@ -13,6 +13,7 @@ import {
 import ExchangeCalculator from "./ExchangeCalculator";
 import TodaysMarketPrice from "./TodaysMarketPrice";
 import ShadcnChart from "./core/shadcnchart";
+import Link from "next/link";
 const GoldWalletDashboard = () => {
   return (
     <div className="mb-20 min-h-screen bg-white px-2 py-4 font-sans text-[#333333]">
@@ -38,22 +39,30 @@ const GoldWalletDashboard = () => {
       </section>
 
       <section className="mb-8 grid grid-cols-2 gap-2">
-        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <ShoppingCartIcon className="mr-2 h-6 w-6" />
-          <span>Buy</span>
-        </button>
-        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <BanknoteIcon className="mr-2 h-6 w-6" />
-          <span>Sell</span>
-        </button>
-        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <GiftIcon className="mr-2 h-6 w-6" />
-          <span>Gift</span>
-        </button>
-        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <RepeatIcon className="mr-2 h-6 w-6" />
-          <span>Exchange</span>
-        </button>
+        <Link href={"dashboard/buy"}>
+          <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] py-4 w-full text-white shadow-md">
+            <ShoppingCartIcon className="mr-2 h-6 w-6" />
+            <span>Buy</span>
+          </button>
+        </Link>
+        <Link href={"dashboard/sell"}>
+          <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] py-4 w-full text-white shadow-md">
+            <BanknoteIcon className="mr-2 h-6 w-6" />
+            <span>Sell</span>
+          </button>
+        </Link>
+        <Link href={"dashboard/gift"}>
+          <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] py-4 w-full text-white shadow-md">
+            <GiftIcon className="mr-2 h-6 w-6" />
+            <span>Gift</span>
+          </button>
+        </Link>
+        <Link href={"dashboard/exchange"}>
+          <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] py-4 w-full text-white shadow-md">
+            <RepeatIcon className="mr-2 h-6 w-6" />
+            <span>Exchange</span>
+          </button>
+        </Link>
       </section>
 
       <section className="mb-8 rounded-lg bg-[#EDD7AE] p-6 shadow-md">
@@ -64,7 +73,7 @@ const GoldWalletDashboard = () => {
         <ExchangeCalculator />
       </section>
 
-      <ShadcnChart/>
+      <ShadcnChart />
 
       <section className="mb-8 rounded-lg bg-[#EDD7AE] p-6 shadow-md">
         <h2 className="mb-4 flex items-center text-xl font-semibold">
@@ -80,7 +89,9 @@ const GoldWalletDashboard = () => {
           </div>
           <div className="rounded-lg bg-white p-4 shadow">
             <h3 className="font-semibold">Referral Bonus</h3>
-            <h4 className="text-sm">Refer a friend and get ৳500 worth of gold</h4>
+            <h4 className="text-sm">
+              Refer a friend and get ৳500 worth of gold
+            </h4>
           </div>
         </div>
       </section>
