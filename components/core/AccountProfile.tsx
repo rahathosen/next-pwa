@@ -4,25 +4,22 @@ import React from "react";
 
 export function AccountProfile(){
   return (
-    <div className="bg-gradient-to-r from-white via-gray-100 to-gray-200 px-4 py-6">
+    <div className="bg-white px-4 py-6 rounded-md drop-shadow-lg m-4">
       {/* Mobile Profile Section */}
-      <section className="mb-8 flex items-center justify-between rounded-md bg-neutral-50 p-4 shadow-md">
+      <section className=" flex items-center justify-between">
         <div className="mr-4 h-16 w-16 rounded-full bg-[#D3BA89]"></div>
         <div>
           <h1 className="text-2xl font-bold">Aakib Hasan</h1>
-          <h2 className="text-sm text-gray-600">Gold Member</h2>
+          <h2 className="text-sm text-zinc-600">Gold Member</h2>
         </div>
       </section>
-
-      {/* Balance and Details Section */}
-      <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-3 sm:space-y-0 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
-        <div className="mt-4 rounded-2xl bg-white p-6 shadow-lg transition-transform duration-300  ">
+      <div className="pt-4">
           {/* Gold Details */}
-          <div className="my-4 flex items-center justify-between rounded-lg bg-gradient-to-r from-zinc-50 via-gray-100 to-gray-200 p-4 shadow-inner">
+          <div className="my-4 flex items-center justify-between bg-gradient-to-r from-white via-zinc-50 to-sand-lite p-4 shadow-inner rounded-md">
             <p className="text-sm font-medium text-sand-deep">
               <span className="font-bold text-black">22k</span> Gold
             </p>
-            <p className="text-lg font-bold text-gray-800">2 Gram</p>
+            <p className="text-lg font-bold text-zinc-800">2 Gram</p>
           </div>
           
           {/* Total Balance */}
@@ -45,6 +42,9 @@ export function AccountProfile(){
             </Link>
           </p>
         </div>
+      {/* Balance and Details Section */}
+      <div className=" flex flex-col-reverse justify-stretch">
+      
       </div>
     </div>
   );

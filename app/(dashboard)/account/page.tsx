@@ -1,3 +1,4 @@
+
 import { AccountNav } from "@/components/core/AccountNav";
 import { AccountProfile } from "@/components/core/AccountProfile";
 import { CalendarDaysIcon } from "@heroicons/react/20/solid";
@@ -101,9 +102,12 @@ export default function Page() {
   return (
     <>
       <AccountNav />
+
       <AccountProfile />
+
+   
       <div className="hidden pb-20 pt-10 md:block">
-        <nav className="flex-none pl-4 pr-8 sm:px-6 lg:px-0">
+        <nav className="flex-none pl-4 pr-4 sm:px-6 lg:px-0">
           <ul
             role="list"
             className="flex max-w-[300px] flex-col gap-x-3 gap-y-1 whitespace-nowrap"
@@ -114,9 +118,9 @@ export default function Page() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-50 text-sand-deep"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-sand-deep",
-                    "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6"
+                      ? "bg-zinc-50 text-sand-deep"
+                      : "text-zinc-700 hover:bg-zinc-50 hover:text-sand-deep",
+                    "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6",
                   )}
                 >
                   <item.icon
@@ -124,8 +128,8 @@ export default function Page() {
                     className={classNames(
                       item.current
                         ? "text-sand-deep"
-                        : "text-gray-400 group-hover:text-sand-deep",
-                      "h-6 w-6 shrink-0"
+                        : "text-zinc-400 group-hover:text-sand-deep",
+                      "h-6 w-6 shrink-0",
                     )}
                   />
                   {item.name}
@@ -134,11 +138,13 @@ export default function Page() {
             ))}
           </ul>
         </nav>
+
+     
       </div>
 
       {/* mobile design */}
       <div className="block pb-20 pt-10 md:hidden">
-        <nav className="flex-none pl-4 pr-8 sm:px-6 lg:px-0">
+        <nav className="flex-none pl-4 pr-4 sm:px-6 lg:px-0">
           <ul
             role="list"
             className="flex flex-col gap-x-3 gap-y-1 whitespace-nowrap"
@@ -146,15 +152,15 @@ export default function Page() {
             {secondaryNavigation.map((item) => (
               <li
                 key={item.name}
-                className="my-1 rounded-md bg-gray-100 p-[6px]"
+                className="my-1 rounded-md bg-zinc-50 "
               >
                 <a
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-50 text-sand-deep"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-sand-deep",
-                    "group flex justify-between gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6"
+                      ? "bg-zinc-100 text-sand-deep"
+                      : "text-zinc-700 hover:bg-zinc-100 hover:text-sand-deep",
+                    "group flex justify-between gap-x-3 rounded-md py-3 pl-3 pr-4 text-sm font-semibold leading-6",
                   )}
                 >
                   <div className="flex gap-3">
@@ -163,8 +169,8 @@ export default function Page() {
                       className={classNames(
                         item.current
                           ? "text-sand-deep"
-                          : "text-gray-400 group-hover:text-sand-deep",
-                        "h-6 w-6 shrink-0"
+                          : "text-zinc-400 group-hover:text-sand-deep",
+                        "h-6 w-6 shrink-0",
                       )}
                     />
                     {item.name}
@@ -175,6 +181,7 @@ export default function Page() {
             ))}
           </ul>
         </nav>
+
       </div>
     </>
   );
