@@ -1,8 +1,7 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
-
+import { ArrowLeftCircleIcon, BellAlertIcon } from "@heroicons/react/20/solid";
 export function AccountNav (){
   const [isToggle, setIsToggle] = useState(true);
 
@@ -13,18 +12,12 @@ export function AccountNav (){
   return (
     <section className="flex items-center justify-between px-4 py-5 md:hidden">
       <h1 className="text-[18px] font-medium">My Account</h1>
-      <div className="flex items-center gap-2">
-        <div
-          className="cursor-pointer rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
-          onClick={handleToggle}
-        >
-          {isToggle ? (
-            <Moon className="text-xl text-gray-800 dark:text-gray-100" />
-          ) : (
-            <Sun className="text-xl text-yellow-500" />
-          )}
-        </div>
-      </div>
+      <button
+            type="button"
+            className="inline-flex items-center gap-x-1.5 rounded-md bg-sand-deep px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-sand-lite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand-deep"
+          >
+            <BellAlertIcon aria-hidden="true" className="-ml-0.5 h-5 w-5" />
+          </button>
     </section>
   );
 };

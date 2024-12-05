@@ -1,4 +1,3 @@
-
 import { AccountNav } from "@/components/core/AccountNav";
 import { AccountProfile } from "@/components/core/AccountProfile";
 import { CalendarDaysIcon } from "@heroicons/react/20/solid";
@@ -101,13 +100,8 @@ function classNames(...classes: any) {
 export default function Page() {
   return (
     <>
-      {/* Account Navbar */}
       <AccountNav />
-
-      {/* Account Profile */}
       <AccountProfile />
-
-   
       <div className="hidden pb-20 pt-10 md:block">
         <nav className="flex-none pl-4 pr-8 sm:px-6 lg:px-0">
           <ul
@@ -120,18 +114,18 @@ export default function Page() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-50 text-amber-600"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-amber-600",
-                    "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6",
+                      ? "bg-gray-50 text-sand-deep"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-sand-deep",
+                    "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6"
                   )}
                 >
                   <item.icon
                     aria-hidden="true"
                     className={classNames(
                       item.current
-                        ? "text-amber-600"
-                        : "text-gray-400 group-hover:text-amber-600",
-                      "h-6 w-6 shrink-0",
+                        ? "text-sand-deep"
+                        : "text-gray-400 group-hover:text-sand-deep",
+                      "h-6 w-6 shrink-0"
                     )}
                   />
                   {item.name}
@@ -140,8 +134,6 @@ export default function Page() {
             ))}
           </ul>
         </nav>
-
-     
       </div>
 
       {/* mobile design */}
@@ -160,9 +152,9 @@ export default function Page() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-50 text-amber-600"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-amber-600",
-                    "group flex justify-between gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6",
+                      ? "bg-gray-50 text-sand-deep"
+                      : "text-gray-700 hover:bg-gray-50 hover:text-sand-deep",
+                    "group flex justify-between gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6"
                   )}
                 >
                   <div className="flex gap-3">
@@ -170,9 +162,9 @@ export default function Page() {
                       aria-hidden="true"
                       className={classNames(
                         item.current
-                          ? "text-amber-600"
-                          : "text-gray-400 group-hover:text-amber-600",
-                        "h-6 w-6 shrink-0",
+                          ? "text-sand-deep"
+                          : "text-gray-400 group-hover:text-sand-deep",
+                        "h-6 w-6 shrink-0"
                       )}
                     />
                     {item.name}
@@ -183,7 +175,6 @@ export default function Page() {
             ))}
           </ul>
         </nav>
-
       </div>
     </>
   );
