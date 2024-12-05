@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Link2Icon,CoinsIcon,DollarSignIcon, WeightIcon } from "lucide-react";
+import { Link2Icon, CoinsIcon, DollarSignIcon, WeightIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function ExchangeCalculator() {
   const [isGrams, setIsGrams] = useState(false);
@@ -20,7 +21,7 @@ export default function ExchangeCalculator() {
       // Converting from grams to BDT
       const bdt = numValue * GOLD_RATE * (1 + VAT);
       setResult(
-        bdt.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + " TK",
+        bdt.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + " TK"
       );
     } else {
       // Converting from BDT to grams
@@ -111,10 +112,12 @@ export default function ExchangeCalculator() {
         (Includes 3% VAT)
       </div>
 
-      <Button className="w-full bg-[#D3BA89] py-6 text-white hover:bg-[#C1A677]">
-        <CoinsIcon className="mr-2 h-4 w-4" />
-        BUY GOLD
-      </Button>
+      <Link href="dashboard/buy">
+        <Button className="w-full bg-[#D3BA89] py-6 text-white hover:bg-[#C1A677]">
+          <CoinsIcon className="mr-2 h-4 w-4" />
+          BUY GOLD
+        </Button>
+      </Link>
 
       {/* <div className="mt-4 text-center text-sm text-gray-500">
         Buy 24K, 999.9 purity guaranteed by AL-Hasan 
