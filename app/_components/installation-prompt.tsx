@@ -28,7 +28,7 @@ const InstallationPrompt = (props: PWAInstallAttributes) => {
     <>
       <pwa-install ref={pwaInstallRef} {...props}></pwa-install>
       <button
-        className={`text-xs items-center bg-[#f79e5d] text-zinc-400 font-semibold rounded flex gap-1 px-2 py-1.5 `}
+        className={`text-xs items-center bg-sand-deep text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5 `}
         onClick={() => pwaInstallRef.current?.showDialog(true)}
       >
         <InstructionsIcon />

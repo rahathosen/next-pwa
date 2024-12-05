@@ -11,6 +11,7 @@ import {
   GlobeAltIcon,
   DocumentTextIcon,
   QuestionMarkCircleIcon,
+  DevicePhoneMobileIcon,
   ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
@@ -86,6 +87,7 @@ const secondaryNavigation = [
     current: false,
   },
   { name: "Help", href: "/help", icon: QuestionMarkCircleIcon, current: false },
+  { name: "App Feature", href: "/mobile_feature", icon: DevicePhoneMobileIcon, current: false },
   {
     name: "Log out from this device",
     href: "#",

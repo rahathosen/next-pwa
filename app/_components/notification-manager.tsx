@@ -35,12 +35,12 @@ export const NotificationManager = ({
 
   return (
     <div className="flex flex-col gap-4 items-center w-full p-4">
-      <div className="flex flex-col gap-4 bg-zinc-400 p-2 rounded-md text-sm w-full font-semibold">
+      <div className="flex flex-col gap-4 bg-zinc-50 p-2 rounded-md text-sm w-full font-semibold">
         <div className="flex justify-between">
-          <span className="text-lg text-zinc-100">PWA</span>
+          <span className="text-lg text-zinc-800">PWA</span>
 
           {isStandalone ? (
-            <span className="text-xs items-center bg-[#f79e5d] text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5">
+            <span className="text-xs items-center bg-sand-deep text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5">
               Installed
             </span>
           ) : (
@@ -66,12 +66,12 @@ export const NotificationManager = ({
         )}
       </div>
 
-      <div className="flex flex-col gap-4 bg-zinc-400 p-2 rounded-md text-sm w-full font-semibold">
+      <div className="flex flex-col gap-4 bg-zinc-50 p-2 rounded-md text-sm w-full font-semibold">
         <div className="flex justify-between">
-          <span className="text-lg text-zinc-100">Notifications</span>
+          <span className="text-lg text-zinc-800">Notifications</span>
           <div className="flex gap-2 items-center">
             <button
-              className={`text-xs items-center w-full bg-[#f79e5d] text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5 ${
+              className={`text-xs items-center w-full bg-sand-deep text-zinc-800 font-semibold rounded flex gap-1 px-2 py-1.5 ${
                 isLoadingSubscription ? "animate-pulse" : ""
               }`}
               onClick={async (e) => {
@@ -108,7 +108,7 @@ export const NotificationManager = ({
         )}
       </div>
       <button
-        className={`text-sm items-center w-full bg-[#f79e5d] text-zinc-800 font-semibold py-2 rounded flex justify-center px-4 ${
+        className={`text-sm items-center w-full bg-sand-deep text-zinc-800 font-semibold py-2 rounded flex justify-center px-4 ${
           isLoadingSendNotification ? "animate-pulse" : ""
         }`}
         disabled={isLoadingSendNotification}
