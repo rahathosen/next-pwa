@@ -7,6 +7,7 @@ import {
   BanknoteIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface PriceData {
   karat: string;
@@ -51,20 +52,25 @@ const PriceRow: React.FC<PriceData & { prevKaratPrice?: number }> = ({
         </div>
       </div>
       <div className="mt-2 grid grid-cols-2 gap-2">
-        <Button
-          variant="outline"
-          className="flex items-center justify-center bg-[#D3BA89] text-white hover:bg-[#C1A677]"
-        >
-          <ShoppingCartIcon className="mr-2 h-4 w-4" />
-          Buy
-        </Button>
-        <Button
-          variant="outline"
-          className="flex items-center justify-center bg-[#D3BA89] text-white hover:bg-[#C1A677]"
-        >
-          <BanknoteIcon className="mr-2 h-4 w-4" />
-          Sell
-        </Button>
+        <Link href={"dashboard/buy"}>
+          <Button
+            variant="outline"
+            className="flex items-center justify-center w-full bg-[#D3BA89] text-white hover:bg-[#C1A677]"
+          >
+            <ShoppingCartIcon className="mr-2 h-4 w-4" />
+            Buy
+          </Button>
+        </Link>
+
+        <Link href={"dashboard/sell"}>
+          <Button
+            variant="outline"
+            className="flex items-center justify-center w-full bg-[#D3BA89] text-white hover:bg-[#C1A677]"
+          >
+            <BanknoteIcon className="mr-2 h-4 w-4" />
+            Sell
+          </Button>
+        </Link>
       </div>
     </div>
   );
