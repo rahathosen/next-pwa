@@ -11,6 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       keyframes: {
+        pulse: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.5)" },
+        },
         "caret-blink": {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
@@ -126,6 +130,10 @@ const config: Config = {
           "3": "hsl(var(--chart-3))",
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
+        },
+        sand: {
+          deep: "#D3BA89",
+          lite: "#EDD7AE",
         },
       },
     },

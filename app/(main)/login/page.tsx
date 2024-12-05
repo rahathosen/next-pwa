@@ -1,43 +1,76 @@
 "use client";
 
+import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-      <div className="w-full md:w-1/2 lg:w-1/3 mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
+    <div className="relative flex min-h-screen items-center justify-center bg-cover bg-center px-5">
+      {/* Overlay */}
+      <div className="relative z-10 mx-auto w-full rounded-lg bg-white/40 p-6 shadow-md md:w-1/2 lg:w-1/3">
+        <h1 className="mb-4 text-center text-2xl font-bold">
+          Sign in to Ways Gold
+        </h1>
+        <p className="text-center text-[14px]">
+          Don't have an account?{" "}
+          <Link className="underline" href="/registration">
+            Sign up
+          </Link>
+        </p>
         <form className="flex flex-col">
           <input
             type="number"
             name="phone"
-            className="px-4 py-3 w-full mt-4 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+            className="mt-4 w-full rounded-md border-transparent bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-500 focus:bg-white focus:ring-0"
             placeholder="Phone Number"
           />
-          <input
-            type="password"
-            name="password"
-            className="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-            placeholder="Password"
-          />
-          <Link href={'/registration'}>
+          <div className="relative mt-4">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              className="w-full rounded-md border-transparent bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-500 focus:bg-white focus:ring-0"
+              placeholder="Password"
+            />
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute inset-y-0 right-0 flex items-center pr-3"
+            >
+              {showPassword ? (
+                <EyeOff className="h-5 w-5 text-gray-500" />
+              ) : (
+                <Eye className="h-5 w-5 text-gray-500" />
+              )}
+            </button>
+          </div>
+          <Link
+            className="mt-2 text-[14px] hover:underline"
+            href="/forget-password"
+          >
+            Forgot password?
+          </Link>
+          <Link href={"/dashboard"}>
             <button
               type="submit"
-              className="mt-4 px-4 py-3 leading-6 text-base rounded-md border border-transparent  bg-black text-amber-100 hover:text-white focus:ring-2 focus:ring-black focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center items-center font-medium focus:outline-none"
+              className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-sand-lite px-4 py-3 text-base font-bold leading-6 text-zinc-900 duration-300 hover:bg-sand-deep hover:text-black"
             >
-              Login
+              Sign in
             </button>
           </Link>
-          <div className="flex flex-col items-center mt-5">
-            <p className="mt-1 text-xs font-light text-gray-500">
-              New to Here?
-              <Link
-                href={"/registration"}
-                className="ml-1 font-medium text-black"
-              >
-                Sign up now
-              </Link>
-            </p>
+          <div className="mt-5 flex flex-col items-center">
+            <Link
+              href={"/support-contact"}
+              className="ml-1 text-[14px] font-medium text-zinc-600 underline"
+            >
+              Contact customer support
+            </Link>
           </div>
         </form>
       </div>
