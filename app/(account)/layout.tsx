@@ -1,5 +1,5 @@
-import BottomNavigation from "@/components/core/BottomNavigation";
-import HeaderNavigation from "@/components/core/HeaderNavigation";
+import BottomNavigation from "@/components/core/bottomNavigation";
+import HeaderNavigation from "@/components/core/headerNavigation";
 
 export default function AccountLayout({
   children,
