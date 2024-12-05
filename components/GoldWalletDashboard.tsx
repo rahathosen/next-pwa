@@ -20,7 +20,7 @@ const GoldWalletDashboard = () => {
         <div className="mr-4 h-16 w-16 rounded-full bg-[#D3BA89]"></div>
         <div>
           <h1 className="text-2xl font-bold">Aakib Hasan</h1>
-          <p className="text-sm text-gray-600">Gold Member</p>
+          <h2 className="text-sm text-gray-600">Gold Member</h2>
         </div>
       </section>
 
@@ -74,13 +74,13 @@ const GoldWalletDashboard = () => {
         <div className="space-y-4">
           <div className="rounded-lg bg-white p-4 shadow">
             <h3 className="font-semibold">Special Eid Offer</h3>
-            <p className="text-sm">
+            <h4 className="text-sm">
               Get 1% extra on gold purchases above 10 grams
-            </p>
+            </h4>
           </div>
           <div className="rounded-lg bg-white p-4 shadow">
             <h3 className="font-semibold">Referral Bonus</h3>
-            <p className="text-sm">Refer a friend and get ৳500 worth of gold</p>
+            <h4 className="text-sm">Refer a friend and get ৳500 worth of gold</h4>
           </div>
         </div>
       </section>

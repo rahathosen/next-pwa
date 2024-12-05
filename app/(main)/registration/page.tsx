@@ -36,7 +36,7 @@ export default function Registration() {
             </button>
            </Link>
             <div className="flex flex-col items-center mt-5">
-              <p className="mt-1 text-xs font-light text-gray-500">
+              <div className="mt-1 text-xs font-light text-gray-500">
                 Already have an account?
                 <Link
                   href={"/login"}
@@ -44,7 +44,7 @@ export default function Registration() {
                 >
                   LogIn Now
                 </Link>
-              </p>
+              </div>
             </div>
           </form>
       </div>

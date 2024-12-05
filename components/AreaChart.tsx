@@ -66,7 +66,7 @@ const LegendItem = ({
         )}
         aria-hidden={true}
       />
-      <p
+      <div
         className={cx(
           // base
           "truncate whitespace-nowrap text-xs",
@@ -78,7 +78,7 @@ const LegendItem = ({
         )}
       >
         {name}
-      </p>
+      </div>
     </li>
   )
 }

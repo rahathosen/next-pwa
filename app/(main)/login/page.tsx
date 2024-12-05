@@ -18,12 +18,12 @@ export default function Page() {
         <h1 className="mb-4 text-center text-2xl font-bold">
           Sign in to Ways Gold
         </h1>
-        <p className="text-center text-[14px]">
+        <div className="text-center text-[14px]">
           Don&apos;t have an account?{" "}
           <Link className="underline" href="/registration">
             Sign up
           </Link>
-        </p>
+        </div>
         <form className="flex flex-col">
           <input
             type="number"
