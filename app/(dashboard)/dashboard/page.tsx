@@ -5,9 +5,7 @@ const Page = () => {
     <>
       <div className="container mx-auto mt-5">
         <div className="px-4 md:flex md:items-center md:justify-between md:space-x-5">
-          {/* Header */}
           <Header title="Welcome" />
-          {/* Dashboard contents */}
           <GoldWalletDashboard />
         </div>
       </div>

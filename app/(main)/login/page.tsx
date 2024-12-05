@@ -19,7 +19,7 @@ export default function Page() {
           Sign in to Ways Gold
         </h1>
         <p className="text-center text-[14px]">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link className="underline" href="/registration">
             Sign up
           </Link>

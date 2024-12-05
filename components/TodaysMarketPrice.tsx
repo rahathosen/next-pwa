@@ -81,7 +81,7 @@ export default function TodaysMarketPrice() {
     <div className="rounded-lg bg-[#EDD7AE] p-6 shadow-md">
       <h2 className="mb-4 flex items-center text-xl font-semibold">
         <ArrowUpIcon className="mr-2 h-6 w-6" />
-        Today's Market Price
+        Today&apos;s Market Price
       </h2>
       <div className="space-y-4">
         {priceData.map((data, index) => (

@@ -19,12 +19,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// Import Bodoni Moda font
-const bodoniModa = Bodoni_Moda({
-  subsets: ["latin"],
-  variable: "--font-bodoni-moda",
-  weight: ["400", "700"],
-});
 
 const unna = Unna({
   subsets: ["latin"],
@@ -83,7 +77,7 @@ export default function RootLayout({
   [&::-webkit-scrollbar-thumb]:rounded-full
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 ${geistSans.variable} ${geistMono.variable} ${bodoniModa.variable} ${unna.variable} ${oldStandardTT.variable} antialiased`}
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 ${geistSans.variable} ${geistMono.variable} ${unna.variable} ${oldStandardTT.variable} antialiased`}
   style={{ fontFamily: 'var(--font-geist-sans), var(--font-geist-mono), var(--font-bodoni-moda),var(--font-unna), var(--font-old-standard-tt)' }}
 >
         <div>{children}</div>

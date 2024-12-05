@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Link2Icon } from "lucide-react";
+import { Link2Icon,CoinsIcon,DollarSignIcon, WeightIcon } from "lucide-react";
 
 export default function ExchangeCalculator() {
   const [isGrams, setIsGrams] = useState(false);
@@ -53,7 +53,7 @@ export default function ExchangeCalculator() {
     <div className="rounded-xl bg-white p-6 text-black">
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link2Icon className="h-4 w-4 text-[#D3BA89]" />
+          <DollarSignIcon className="h-4 w-4 text-[#D3BA89]" />
           <span className={isGrams ? "text-gray-500" : "text-black"}>BDT</span>
         </div>
         <Switch
@@ -62,7 +62,7 @@ export default function ExchangeCalculator() {
           className="bg-gray-200"
         />
         <div className="flex items-center gap-2">
-          <Link2Icon className="h-4 w-4 text-[#D3BA89]" />
+          <WeightIcon className="h-4 w-4 text-[#D3BA89]" />
           <span className={!isGrams ? "text-gray-500" : "text-black"}>
             In Grams
           </span>
@@ -73,7 +73,7 @@ export default function ExchangeCalculator() {
         type="number"
         value={amount}
         onChange={(e) => handleAmountChange(e.target.value)}
-        className="mb-4 w-full rounded-lg bg-gray-100 py-2 text-center text-2xl text-black"
+        className="mb-4 w-full rounded-lg bg-gray-100 py-2 text-center text-base text-zinc-400"
         placeholder={isGrams ? "Enter grams" : "Enter amount in BDT"}
       />
 
@@ -112,13 +112,13 @@ export default function ExchangeCalculator() {
       </div>
 
       <Button className="w-full bg-[#D3BA89] py-6 text-white hover:bg-[#C1A677]">
-        <Link2Icon className="mr-2 h-4 w-4" />
+        <CoinsIcon className="mr-2 h-4 w-4" />
         BUY GOLD
       </Button>
 
-      <div className="mt-4 text-center text-sm text-gray-500">
-        Buy 24K, 999.9 purity guaranteed by AL-Hasan
-      </div>
+      {/* <div className="mt-4 text-center text-sm text-gray-500">
+        Buy 24K, 999.9 purity guaranteed by AL-Hasan 
+      </div> */}
     </div>
   );
 }
