@@ -3,7 +3,7 @@
 import Header from "@/components/core/Header";
 import { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [isEnglish, setIsEnglish] = useState(true);
   const toggleLanguage = () => {
     setIsEnglish(!isEnglish);
@@ -43,4 +43,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -2,7 +2,7 @@
 import Header from "@/components/core/Header";
 import { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [notifications, setNotifications] = useState([
     {
       id: 1,
@@ -94,4 +94,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

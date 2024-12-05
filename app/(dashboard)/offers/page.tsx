@@ -5,7 +5,7 @@ import OffersCard from "@/components/core/OffersCard";
 import React, { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 
-const Offers = () => {
+const Page = () => {
   // Carousel state for Featured Promotions
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -163,4 +163,4 @@ const Offers = () => {
   );
 };
 
-export default Offers;
+export default Page;
